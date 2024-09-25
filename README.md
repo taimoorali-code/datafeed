@@ -51,7 +51,16 @@ DB_PASSWORD=your_password
 
 php artisan migrate
 ```
-6.  Start the Development Server
+
+6. Update .env 
+
+```bash
+
+SHOPIFY_STORE_URL="yourStore.myshopify.com"
+SHOPIFY_ACCESS_TOKEN="your-access-token"
+```
+
+7.  Start the Development Server
 ```bash
 
 php artisan serve
