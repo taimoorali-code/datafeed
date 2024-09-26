@@ -11,8 +11,11 @@ class DataFeedController extends Controller
     {
         // Assuming you have the JSON data stored in 'json_ar' field for Arabic and 'json_en' for English
         $products = Product::where('status', 'active')
+            ->whereNotNull('json_ar') // Ensure json_ar is not null
+            ->whereNotNull('json_en') // Ensure json_en is not null
             ->select('json_ar', 'json_en') // Select only the JSON fields
             ->get();
+
 
         // Initialize XML
         $xml = new \SimpleXMLElement('<rss version="2.0"/>');
@@ -28,7 +31,7 @@ class DataFeedController extends Controller
             $productJson = $language === 'ar' ? $product->json_ar : $product->json_en;
             $productData = json_decode($productJson, true);
 
-           
+
             if (isset($productData['product'])) {
                 # code...
                 // Loop through each variant in the product
@@ -59,8 +62,7 @@ class DataFeedController extends Controller
                     $item->addChild('g:custom_label_0', 'Face');
                     $item->addChild('g:custom_label_1', $language === 'ar' ? 'AR' : 'EN');
                 }
-            }
-            else{
+            } else {
                 foreach ($productData['variants'] as $variant) {
                     $item = $channel->addChild('item');
 
