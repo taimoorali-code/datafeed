@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('status')->nullable();
             $table->json('json_en')->nullable();  // Field to store the entire JSON response for English
             $table->json('json_ar')->nullable();
+            $table->json('json_sq')->nullable();
+
             $table->timestamps();
 
         });

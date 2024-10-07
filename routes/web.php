@@ -1,7 +1,10 @@
 <?php
 
 use App\Http\Controllers\DataFeedController;
+use App\Http\Controllers\ProductBonanaController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductSyncController;
+use App\Http\Controllers\XmlProductController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -20,9 +23,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+// For NohaNobail Store
 Route::get('/feed/{language}', [DataFeedController::class, 'generateFeed']);
-// Route::get('/products', [ProductController::class, 'index']); // Get all products
-// Route::get('/get-translated-data', [ProductController::class, 'getTranslatedData']);
-// Route::get('/englishtproducts', [ProductController::class, 'getenglishproduct']); // Get all products
 Route::get('/syncproduct', [ProductController::class, 'syncProducts']); // Get all products
-// Route::get('/sync-products', [ProductController::class, 'syncProducts']);
+
+// For Bonana Store
+Route::get('/generate-xml/{language}', [XmlProductController::class, 'generateXml']);
+Route::get('/syncproductbonana', [ProductSyncController::class, 'syncProducts']);
+Route::get('/getProduct', [ProductSyncController::class, 'getproduct']);

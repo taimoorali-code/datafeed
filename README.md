@@ -65,7 +65,7 @@ SHOPIFY_ACCESS_TOKEN="your-access-token"
 
 php artisan serve
 ```
-## Sync Product from Shopify Api to local Database
+## Sync Product from Shopify Api to local Database for Enlgish and Arabic
 
 ```bash
 
@@ -75,7 +75,17 @@ php artisan serve
 This command allows users to:
 - Upload Json Products details to local / server database. 
 
-## Export Xml Formatted File
+## Sync Product from Shopify Api to local Database for Enlgish and Albnain
+
+```bash
+
+{app_url}/syncproductbonana
+
+```
+This command allows users to:
+- Upload Json Products details to local / server database.
+
+## Export Xml Formatted File English / Arabic
 
 ```bash
 
@@ -86,3 +96,17 @@ This command allows users to:
 - Generate XML formatted products details according to given language 
 - Example For English: http://127.0.0.1:8000/feed/en
 - Example For Arabic: http://127.0.0.1:8000/feed/ar
+
+
+## Export Xml Formatted File English / Albnain
+
+```bash
+
+{app_url}/generate-xml/{language}
+
+```
+This command allows users to:
+- Generate XML formatted products details according to given language 
+- Example For English: http://127.0.0.1:8000/generate-xml/en
+- Example For Albnain: http://127.0.0.1:8000/generate-xml/sq
+
