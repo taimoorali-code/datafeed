@@ -4,7 +4,7 @@
 ## Project Overview
 -------------------
 
-This Laravel project provides a comprehensive xml formatted files, enabling users to get well xml-formatted shopify store product details. The system parses and stores the JSON data in a database, displaying xml formatted product details according to given sample xml files. Additionally, the project features provide details with support for multiple languages, including English, and Arabic.
+This Laravel project provides a comprehensive xml formatted files, enabling users to get well xml-formatted shopify store product details. The system parses and stores the JSON data in a database, displaying xml formatted product details according to given sample xml files. Additionally, the project features provide details with support for multiple languages, including English, albnain and Arabic.
 
 ## Getting Started
 -------------------
